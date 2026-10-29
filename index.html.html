@@ -1,0 +1,1055 @@
+<!-- ... existing code ... -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN (must be loaded before configuring tailwind) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        light: {
+                            50: '#FAF9F6',
+                            100: '#F4F3EF',
+                            200: '#E8E6E1',
+                            300: '#D5D1C8',
+                            400: '#B8B2A6'
+                        },
+                        charcoal: {
+                            DEFAULT: '#222222',
+                            light: '#4A4A4A',
+                            muted: '#6B7280'
+                        },
+                        gold: {
+                            DEFAULT: '#C5A059',
+                            dark: '#A3803C',
+                            light: '#E5C989',
+                            soft: '#FAF5EB'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FAF9F6;
+            color: #222222;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(#D5D1C8 0.75px, transparent 0.75px);
+            background-size: 24px 24px;
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="smooth-scroll text-charcoal bg-light-50 antialiased selection:bg-gold-light selection:text-charcoal">
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 bg-light-50/90 backdrop-blur-md border-b border-light-200 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-xl bg-charcoal text-white flex items-center justify-center font-bold text-lg shadow-md group-hover:bg-gold transition-colors">
+                    GP
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-lg tracking-wider text-charcoal uppercase leading-none">Gustavo Pecorari</span>
+                    <span class="text-[10px] text-gold uppercase tracking-widest font-semibold mt-1">Fotografia & Vídeo</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-charcoal-light">
+                <a href="#portfolio" class="hover:text-gold transition-colors">Portfólio</a>
+                <a href="#orcamento" class="hover:text-gold transition-colors">Valores & Pacotes</a>
+                <a href="#sobre" class="hover:text-gold transition-colors">Sobre</a>
+                <a href="#depoimentos" class="hover:text-gold transition-colors">Depoimentos</a>
+                <a href="#contato" class="hover:text-gold transition-colors">Contato</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-3">
+                <a href="#orcamento" class="bg-gold hover:bg-gold-dark text-white px-5 py-2.5 rounded-xl font-medium text-sm transition-all shadow-sm hover:shadow-md flex items-center gap-2">
+                    <i data-lucide="calculator" class="w-4 h-4"></i>
+                    Simular Valor
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-charcoal hover:text-gold focus:outline-none" aria-label="Abrir Menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-light-200 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#portfolio" class="block py-2 text-charcoal font-medium border-b border-light-100">Portfólio</a>
+            <a href="#orcamento" class="block py-2 text-charcoal font-medium border-b border-light-100">Valores & Pacotes</a>
+            <a href="#sobre" class="block py-2 text-charcoal font-medium border-b border-light-100">Sobre Mim</a>
+            <a href="#depoimentos" class="block py-2 text-charcoal font-medium border-b border-light-100">Depoimentos</a>
+            <a href="#contato" class="block py-2 text-charcoal font-medium">Contato</a>
+            <a href="#orcamento" class="w-full bg-gold text-white py-3 rounded-xl font-semibold text-center block mt-4">
+                Simular Orçamento
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden bg-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                
+                <div class="md:col-span-7 space-y-6 text-left">
+                    <div class="inline-flex items-center gap-2 bg-gold-soft border border-gold/20 px-3.5 py-1.5 rounded-full text-xs font-semibold text-gold-dark">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                        <span>Fotografia Profissional & Espontânea</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-charcoal tracking-tight leading-tight">
+                        Registrando momentos inesquecíveis com alma e sensibilidade.
+                    </h1>
+
+                    <p class="text-lg text-charcoal-light max-w-xl font-normal leading-relaxed">
+                        Especialista em <strong class="text-charcoal font-semibold">Ensaio de Casal/Individual</strong>, <strong class="text-charcoal font-semibold">Aniversários</strong> e <strong class="text-charcoal font-semibold">Comemorações</strong>. Mais de 5 anos eternizando histórias únicas.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="#orcamento" class="bg-charcoal hover:bg-black text-white px-7 py-4 rounded-xl font-semibold text-base transition-all shadow-lg hover:shadow-xl flex items-center gap-3 group">
+                            <span>Ver Tabela de Valores</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#portfolio" class="bg-white hover:bg-light-100 text-charcoal border border-light-300 px-6 py-4 rounded-xl font-semibold text-base transition-all shadow-sm flex items-center gap-2">
+                            <i data-lucide="image" class="w-5 h-5 text-gold"></i>
+                             Ver Portfólio
+                        </a>
+                    </div>
+
+                    <!-- Promo Validity Banner -->
+                    <div class="pt-4">
+                        <div class="inline-flex items-center gap-3 bg-white border border-light-200 px-4 py-2.5 rounded-xl shadow-sm">
+                            <span class="relative flex h-3 w-3">
+                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                              <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                            </span>
+                            <p class="text-xs font-medium text-charcoal">
+                                Tabela de preços com <strong class="text-emerald-700">Validade da Oferta por 20 dias</strong> (válida até <span id="promo-date-display" class="font-bold underline">--/--/----</span>).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-5 relative">
+                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+                        <!-- ========================================================================================= -->
+                        <!-- 📸 FOTO HERO / DESTAQUE PRINCIPAL -->
+                        <!-- Para trocar esta imagem, substitua a URL do parâmetro 'src' abaixo -->
+                        <!-- ========================================================================================= -->
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1000" alt="Fotografia Gustavo Pecorari" class="w-full h-[460px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent flex items-end p-6">
+                            <div class="text-white">
+                                <p class="text-xs font-semibold uppercase tracking-wider text-gold-light">Gustavo Pecorari</p>
+                                <p class="text-lg font-bold">A arte de capturar emoções reais.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 w-36 h-36 bg-gold/10 rounded-full blur-2xl -z-10"></div>
+                    <div class="absolute -top-6 -right-6 w-36 h-36 bg-charcoal/5 rounded-full blur-2xl -z-10"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <section class="bg-white border-y border-light-200 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4 rounded-xl hover:bg-light-50 transition-colors">
+                    <p class="text-3xl sm:text-4xl font-extrabold text-charcoal tracking-tight">+5 Anos</p>
+                    <p class="text-xs sm:text-sm text-charcoal-muted font-medium mt-1">de Experiência Profissional</p>
+                </div>
+                <div class="p-4 rounded-xl hover:bg-light-50 transition-colors">
+                    <p class="text-3xl sm:text-4xl font-extrabold text-gold tracking-tight">+100</p>
+                    <p class="text-xs sm:text-sm text-charcoal-muted font-medium mt-1">Eventos Cobertos</p>
+                </div>
+                <div class="p-4 rounded-xl hover:bg-light-50 transition-colors">
+                    <p class="text-3xl sm:text-4xl font-extrabold text-charcoal tracking-tight">+500</p>
+                    <p class="text-xs sm:text-sm text-charcoal-muted font-medium mt-1">Registros Efetuados</p>
+                </div>
+                <div class="p-4 rounded-xl hover:bg-light-50 transition-colors">
+                    <p class="text-3xl sm:text-4xl font-extrabold text-gold tracking-tight">15 a 30 dias</p>
+                    <p class="text-xs sm:text-sm text-charcoal-muted font-medium mt-1">Prazo Rápido de Entrega</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO GALLERY SECTION -->
+    <section id="portfolio" class="py-20 bg-light-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-xs font-bold text-gold uppercase tracking-widest">Trabalhos Recentes</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-charcoal">Galeria de Fotos</h2>
+                <p class="text-charcoal-light text-base">Navegue pelas categorias e confira a qualidade do registro que levarei para o seu momento.</p>
+            </div>
+
+            <!-- Gallery Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10" id="gallery-filters">
+                <button class="filter-btn active px-5 py-2 rounded-xl text-sm font-semibold transition-all bg-charcoal text-white shadow-sm" data-filter="all">Todas as Fotos</button>
+                <button class="filter-btn px-5 py-2 rounded-xl text-sm font-semibold transition-all bg-white text-charcoal-light border border-light-200 hover:border-gold" data-filter="casal">Ensaio Casal/Individual</button>
+                <button class="filter-btn px-5 py-2 rounded-xl text-sm font-semibold transition-all bg-white text-charcoal-light border border-light-200 hover:border-gold" data-filter="aniversario">Aniversários</button>
+                <button class="filter-btn px-5 py-2 rounded-xl text-sm font-semibold transition-all bg-white text-charcoal-light border border-light-200 hover:border-gold" data-filter="comemoracao">Comemorações</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                
+                <!-- ========================================================================================= -->
+                <!-- 📸 GALERIA - FOTO 01: ENSAIO DE CASAL -->
+                <!-- Para trocar esta foto, substitua a URL em 'src' (miniatura) e em 'data-src' (imagem ampliada) -->
+                <!-- ========================================================================================= -->
+                <div class="gallery-item casal group relative overflow-hidden rounded-2xl bg-light-100 border border-light-200 cursor-pointer h-80 shadow-sm hover:shadow-xl transition-all duration-300" data-title="Ensaio Romântico ao Pôr do Sol" data-category="Ensaio de Casal" data-src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&q=80&w=1200">
+                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&q=80&w=800" alt="Ensaio de Casal" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-xs text-gold-light uppercase font-semibold tracking-wider">Ensaio de Casal</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Conexão & Afeto ao Ar Livre</h3>
+                        <p class="text-xs text-light-200 mt-2 flex items-center gap-1"><i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Expandir imagem</p>
+                    </div>
+                </div>
+
+                <!-- ========================================================================================= -->
+                <!-- 📸 GALERIA - FOTO 02: ANIVERSÁRIO -->
+                <!-- Para trocar esta foto, substitua a URL em 'src' (miniatura) e em 'data-src' (imagem ampliada) -->
+                <!-- ========================================================================================= -->
+                <div class="gallery-item aniversario group relative overflow-hidden rounded-2xl bg-light-100 border border-light-200 cursor-pointer h-80 shadow-sm hover:shadow-xl transition-all duration-300" data-title="Festa de Aniversário Especial" data-category="Aniversário" data-src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&q=80&w=1200">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&q=80&w=800" alt="Aniversário" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-xs text-gold-light uppercase font-semibold tracking-wider">Aniversários</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Celebração de 30 Anos</h3>
+                        <p class="text-xs text-light-200 mt-2 flex items-center gap-1"><i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Expandir imagem</p>
+                    </div>
+                </div>
+
+                <!-- ========================================================================================= -->
+                <!-- 📸 GALERIA - FOTO 03: COMEMORAÇÕES -->
+                <!-- Para trocar esta foto, substitua a URL em 'src' (miniatura) e em 'data-src' (imagem ampliada) -->
+                <!-- ========================================================================================= -->
+                <div class="gallery-item comemoracao group relative overflow-hidden rounded-2xl bg-light-100 border border-light-200 cursor-pointer h-80 shadow-sm hover:shadow-xl transition-all duration-300" data-title="Jantar Festivo & Brinde" data-category="Comemorações" data-src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&q=80&w=1200">
+                    <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&q=80&w=800" alt="Comemorações" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-xs text-gold-light uppercase font-semibold tracking-wider">Comemorações</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Reunião de Família & Amigos</h3>
+                        <p class="text-xs text-light-200 mt-2 flex items-center gap-1"><i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Expandir imagem</p>
+                    </div>
+                </div>
+
+                <!-- ========================================================================================= -->
+                <!-- 📸 GALERIA - FOTO 04: ENSAIO INDIVIDUAL -->
+                <!-- Para trocar esta foto, substitua a URL em 'src' (miniatura) e em 'data-src' (imagem ampliada) -->
+                <!-- ========================================================================================= -->
+                <div class="gallery-item casal group relative overflow-hidden rounded-2xl bg-light-100 border border-light-200 cursor-pointer h-80 shadow-sm hover:shadow-xl transition-all duration-300" data-title="Ensaio Individual Urbano" data-category="Ensaio Individual" data-src="https://scontent-gru2-2.cdninstagram.com/v/t51.82787-15/748787934_18599214019015469_3451950894572108054_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=Mzk0Mjk4MTQ4MDI2MzQ3NzE1Ng%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzA3Ni5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=rvaWQyXt8xcQ7kNvwH8gbSz&_nc_oc=AdrVKjQncYEsjw1kRvKp3TVnrCscFAJa-UGXCDzpPNb-XsLDFxcSJO8P4nlbeseMdyI&_nc_zt=23&_nc_ht=scontent-gru2-2.cdninstagram.com&_nc_gid=bqQlzLWZS3xK3pDe_A8e2A&_nc_ss=7baaf&oh=00_AQSLbBWrVCJMjYyIq0NWgA0ewfrC-eORHLnFV38XqvWHeA&oe=6AE985F1">
+                    <img src="https://scontent-gru2-2.cdninstagram.com/v/t51.82787-15/748787934_18599214019015469_3451950894572108054_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=Mzk0Mjk4MTQ4MDI2MzQ3NzE1Ng%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzA3Ni5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=rvaWQyXt8xcQ7kNvwH8gbSz&_nc_oc=AdrVKjQncYEsjw1kRvKp3TVnrCscFAJa-UGXCDzpPNb-XsLDFxcSJO8P4nlbeseMdyI&_nc_zt=23&_nc_ht=scontent-gru2-2.cdninstagram.com&_nc_gid=bqQlzLWZS3xK3pDe_A8e2A&_nc_ss=7baaf&oh=00_AQSLbBWrVCJMjYyIq0NWgA0ewfrC-eORHLnFV38XqvWHeA&oe=6AE985F1" alt="Ensaio Individual" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-xs text-gold-light uppercase font-semibold tracking-wider">Ensaio Individual</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Retrato Pessoal & Estilo</h3>
+                        <p class="text-xs text-light-200 mt-2 flex items-center gap-1"><i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Expandir imagem</p>
+                    </div>
+                </div>
+
+                <!-- ========================================================================================= -->
+                <!-- 📸 GALERIA - FOTO 05: ANIVERSÁRIO INFANTIL -->
+                <!-- Para trocar esta foto, substitua a URL em 'src' (miniatura) e em 'data-src' (imagem ampliada) -->
+                <!-- ========================================================================================= -->
+                <div class="gallery-item aniversario group relative overflow-hidden rounded-2xl bg-light-100 border border-light-200 cursor-pointer h-80 shadow-sm hover:shadow-xl transition-all duration-300" data-title="Festa Infantil & Sorrisos" data-category="Aniversário Infantil" data-src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=1200">
+                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=800" alt="Festa de Aniversário" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-xs text-gold-light uppercase font-semibold tracking-wider">Aniversários</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Registros Espontâneos</h3>
+                        <p class="text-xs text-light-200 mt-2 flex items-center gap-1"><i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Expandir imagem</p>
+                    </div>
+                </div>
+
+                <!-- ========================================================================================= -->
+                <!-- 📸 GALERIA - FOTO 06: COMEMORAÇÕES / FORMATURA -->
+                <!-- Para trocar esta foto, substitua a URL em 'src' (miniatura) e em 'data-src' (imagem ampliada) -->
+                <!-- ========================================================================================= -->
+                <div class="gallery-item comemoracao group relative overflow-hidden rounded-2xl bg-light-100 border border-light-200 cursor-pointer h-80 shadow-sm hover:shadow-xl transition-all duration-300" data-title="Formatura & Conquista" data-category="Comemorações" data-src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80&w=1200">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80&w=800" alt="Comemoração de Formatura" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-xs text-gold-light uppercase font-semibold tracking-wider">Comemorações</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Celebração de Conquistas</h3>
+                        <p class="text-xs text-light-200 mt-2 flex items-center gap-1"><i data-lucide="maximize-2" class="w-3.5 h-3.5"></i> Expandir imagem</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 backdrop-blur-md">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white/80 hover:text-white p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div class="max-w-4xl max-h-[85vh] flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="Ampliada" class="max-h-[75vh] w-auto object-contain rounded-xl shadow-2xl">
+            <div class="mt-4 text-center text-white">
+                <p id="lightbox-category" class="text-xs text-gold font-bold uppercase tracking-widest"></p>
+                <h3 id="lightbox-title" class="text-xl font-bold mt-1"></h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- CALCULATOR & PRICING SECTION -->
+    <section id="orcamento" class="py-20 bg-white border-y border-light-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+                <span class="text-xs font-bold text-gold uppercase tracking-widest">Simulador Transparente</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-charcoal">Calculadora de Investimento</h2>
+                <p class="text-charcoal-light text-base">Selecione a categoria do seu evento e a quantidade de horas desejadas para simular o valor exato na hora.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left Column: Interactive Selector -->
+                <div class="lg:col-span-7 bg-light-50 p-6 sm:p-8 rounded-2xl border border-light-200 shadow-sm space-y-8">
+                    
+                    <!-- 1. Select Category -->
+                    <div>
+                        <label class="block text-xs font-bold text-charcoal uppercase tracking-wider mb-3">1. Escolha a Categoria do Registro</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <button type="button" onclick="selectCategory('ensaio')" id="btn-cat-ensaio" class="cat-btn active p-4 rounded-xl border-2 text-left transition-all flex flex-col justify-between h-28 border-gold bg-gold-soft/50 shadow-sm">
+                                <i data-lucide="heart" class="w-5 h-5 text-gold"></i>
+                                <div>
+                                    <p class="font-bold text-sm text-charcoal">Ensaio Casal / Individual</p>
+                                    <p class="text-[11px] text-charcoal-muted mt-0.5">Externo ou em estúdio</p>
+                                </div>
+                            </button>
+
+                            <button type="button" onclick="selectCategory('aniversario')" id="btn-cat-aniversario" class="cat-btn p-4 rounded-xl border-2 border-light-200 bg-white text-left transition-all hover:border-light-300 flex flex-col justify-between h-28">
+                                <i data-lucide="cake" class="w-5 h-5 text-charcoal-muted"></i>
+                                <div>
+                                    <p class="font-bold text-sm text-charcoal">Aniversário</p>
+                                    <p class="text-[11px] text-charcoal-muted mt-0.5">Infantil ou adulto</p>
+                                </div>
+                            </button>
+
+                            <button type="button" onclick="selectCategory('comemoracoes')" id="btn-cat-comemoracoes" class="cat-btn p-4 rounded-xl border-2 border-light-200 bg-white text-left transition-all hover:border-light-300 flex flex-col justify-between h-28">
+                                <i data-lucide="party-popper" class="w-5 h-5 text-charcoal-muted"></i>
+                                <div>
+                                    <p class="font-bold text-sm text-charcoal">Comemorações</p>
+                                    <p class="text-[11px] text-charcoal-muted mt-0.5">Jantares e festas</p>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 2. Select Coverage Hours (Custom Options Per Category) -->
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <label class="block text-xs font-bold text-charcoal uppercase tracking-wider">2. Duração da Cobertura</label>
+                            <span class="text-xs text-gold font-semibold" id="category-badge">Categoria: Ensaio</span>
+                        </div>
+
+                        <!-- Options for Ensaio -->
+                        <div id="options-ensaio" class="grid grid-cols-1 sm:grid-cols-3 gap-3 option-group">
+                            <label class="relative border-2 border-gold bg-white p-4 rounded-xl cursor-pointer hover:border-gold transition-all shadow-sm block">
+                                <input type="radio" name="hours_ensaio" value="449" data-hours="1 Hora de cobertura" checked onchange="calculatePrice()" class="sr-only">
+                                <div class="flex flex-col h-full justify-between">
+                                    <span class="text-xs font-bold text-gold uppercase">Opção 01</span>
+                                    <p class="font-bold text-base text-charcoal mt-1">1 Hora</p>
+                                    <p class="text-sm font-semibold text-charcoal-light mt-2">R$ 449,00</p>
+                                </div>
+                            </label>
+
+                            <label class="relative border-2 border-light-200 bg-white p-4 rounded-xl cursor-pointer hover:border-gold transition-all block">
+                                <input type="radio" name="hours_ensaio" value="749" data-hours="2 Horas de cobertura" onchange="calculatePrice()" class="sr-only">
+                                <div class="flex flex-col h-full justify-between">
+                                    <span class="text-xs font-bold text-charcoal-muted uppercase">Opção 02</span>
+                                    <p class="font-bold text-base text-charcoal mt-1">2 Horas</p>
+                                    <p class="text-sm font-semibold text-charcoal-light mt-2">R$ 749,00</p>
+                                </div>
+                            </label>
+
+                            <label class="relative border-2 border-light-200 bg-white p-4 rounded-xl cursor-pointer hover:border-gold transition-all block">
+                                <input type="radio" name="hours_ensaio" value="1599" data-hours="3 a 4 Horas de cobertura" onchange="calculatePrice()" class="sr-only">
+                                <div class="flex flex-col h-full justify-between">
+                                    <span class="text-xs font-bold text-charcoal-muted uppercase">Opção Completa</span>
+                                    <p class="font-bold text-base text-charcoal mt-1">3 a 4 Horas</p>
+                                    <p class="text-sm font-semibold text-charcoal-light mt-2">R$ 1.599,00</p>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Options for Aniversario -->
+                        <div id="options-aniversario" class="grid grid-cols-1 sm:grid-cols-3 gap-3 option-group hidden">
+                            <label class="relative border-2 border-gold bg-white p-4 rounded-xl cursor-pointer hover:border-gold transition-all block">
+                                <input type="radio" name="hours_aniversario" value="350" data-hours="1 Hora de cobertura" checked onchange="calculatePrice()" class="sr-only">
+                                <div class="flex flex-col h-full justify-between">
+                                    <span class="text-xs font-bold text-gold uppercase">Essencial</span>
+                                    <p class="font-bold text-base text-charcoal mt-1">1 Hora</p>
+                                    <p class="text-sm font-semibold text-charcoal-light mt-2">R$ 350,00</p>
+                                </div>
+                            </label>
+
+                            <label class="relative border-2 border-light-200 bg-white p-4 rounded-xl cursor-pointer hover:border-gold transition-all block">
+                                <input type="radio" name="hours_aniversario" value="450" data-hours="2 Horas de cobertura" onchange="calculatePrice()" class="sr-only">
+                                <div class="flex flex-col h-full justify-between">
+                                    <span class="text-xs font-bold text-charcoal-muted uppercase">Recomendado</span>
+                                    <p class="font-bold text-base text-charcoal mt-1">2 Horas</p>
+                                    <p class="text-sm font-semibold text-charcoal-light mt-2">R$ 450,00</p>
+                                </div>
+                            </label>
+
+                            <label class="relative border-2 border-light-200 bg-white p-4 rounded-xl cursor-pointer hover:border-gold transition-all block">
+                                <input type="radio" name="hours_aniversario" value="780" data-hours="3 a 4 Horas de cobertura" onchange="calculatePrice()" class="sr-only">
+                                <div class="flex flex-col h-full justify-between">
+                                    <span class="text-xs font-bold text-charcoal-muted uppercase">Festa Completa</span>
+                                    <p class="font-bold text-base text-charcoal mt-1">3 a 4 Horas</p>
+                                    <p class="text-sm font-semibold text-charcoal-light mt-2">R$ 780,00</p>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Options for Comemoracoes -->
+                        <div id="options-comemoracoes" class="grid grid-cols-2 sm:grid-cols-4 gap-3 option-group hidden">
+                            <label class="relative border-2 border-gold bg-white p-3 rounded-xl cursor-pointer hover:border-gold transition-all block">
+                                <input type="radio" name="hours_comemoracoes" value="600" data-hours="1 Hora de cobertura" checked onchange="calculatePrice()" class="sr-only">
+                                <div class="flex flex-col h-full justify-between">
+                                    <span class="text-[10px] font-bold text-gold uppercase">Básico</span>
+                                    <p class="font-bold text-sm text-charcoal mt-1">1 Hora</p>
+                                    <p class="text-xs font-semibold text-charcoal-light mt-1">R$ 600,00</p>
+                                </div>
+                            </label>
+
+                            <label class="relative border-2 border-light-200 bg-white p-3 rounded-xl cursor-pointer hover:border-gold transition-all block">
+                                <input type="radio" name="hours_comemoracoes" value="900" data-hours="2 Horas de cobertura" onchange="calculatePrice()" class="sr-only">
+                                <div class="flex flex-col h-full justify-between">
+                                    <span class="text-[10px] font-bold text-charcoal-muted uppercase">Padrão</span>
+                                    <p class="font-bold text-sm text-charcoal mt-1">2 Horas</p>
+                                    <p class="text-xs font-semibold text-charcoal-light mt-1">R$ 900,00</p>
+                                </div>
+                            </label>
+
+                            <label class="relative border-2 border-light-200 bg-white p-3 rounded-xl cursor-pointer hover:border-gold transition-all block">
+                                <input type="radio" name="hours_comemoracoes" value="1200" data-hours="3 Horas de cobertura" onchange="calculatePrice()" class="sr-only">
+                                <div class="flex flex-col h-full justify-between">
+                                    <span class="text-[10px] font-bold text-charcoal-muted uppercase">Expandido</span>
+                                    <p class="font-bold text-sm text-charcoal mt-1">3 Horas</p>
+                                    <p class="text-xs font-semibold text-charcoal-light mt-1">R$ 1.200,00</p>
+                                </div>
+                            </label>
+
+                            <label class="relative border-2 border-light-200 bg-white p-3 rounded-xl cursor-pointer hover:border-gold transition-all block">
+                                <input type="radio" name="hours_comemoracoes" value="1900" data-hours="Até 6 Horas de cobertura" onchange="calculatePrice()" class="sr-only">
+                                <div class="flex flex-col h-full justify-between">
+                                    <span class="text-[10px] font-bold text-charcoal-muted uppercase">Master</span>
+                                    <p class="font-bold text-sm text-charcoal mt-1">Até 6 Horas</p>
+                                    <p class="text-xs font-semibold text-charcoal-light mt-1">R$ 1.900,00</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Key Included Benefits -->
+                    <div class="border-t border-light-200 pt-6 space-y-3">
+                        <p class="text-xs font-bold text-charcoal uppercase tracking-wider">O que já está incluso em qualquer pacote:</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-charcoal-light">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+                                <span>Tratamento profissional de cor e luz</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+                                <span>Entrega via galeria digital em alta resolução</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
+                                <span>Sem limite de fotos aprovadas salvas</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="clock" class="w-4 h-4 text-gold"></i>
+                                <span>Prazo de entrega: <strong>15 a 30 dias</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Price Output Card -->
+                <div class="lg:col-span-5 bg-charcoal text-white p-8 rounded-2xl shadow-xl space-y-6 sticky top-28">
+                    <div class="border-b border-charcoal-light pb-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-gold">Resumo da Seleção</span>
+                        <h3 class="text-2xl font-bold mt-1" id="summary-category-title">Ensaio Casal / Individual</h3>
+                        <p class="text-xs text-light-400 mt-1" id="summary-hours-text">1 Hora de cobertura</p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="flex justify-between text-sm text-light-300">
+                            <span>Valor do Investimento:</span>
+                            <span class="font-bold text-white" id="summary-price-display">R$ 449,00</span>
+                        </div>
+                        <div class="flex justify-between text-sm text-light-300">
+                            <span>Prazo de entrega das fotos:</span>
+                            <span class="font-semibold text-gold">15 a 30 dias</span>
+                        </div>
+                        <div class="flex justify-between text-sm text-light-300">
+                            <span>Validade do orçamento:</span>
+                            <span class="font-semibold text-emerald-400">20 dias a contar de hoje</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-charcoal-light space-y-3">
+                        <div class="text-center">
+                            <span class="text-xs text-light-400">Investimento Total Estimado</span>
+                            <div class="text-4xl font-extrabold text-gold mt-1" id="total-price">R$ 449,00</div>
+                        </div>
+
+                        <!-- Main Action: Send directly to WhatsApp -->
+                        <button onclick="sendToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white py-4 rounded-xl font-bold text-base transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            Solicitar Orçamento via WhatsApp
+                        </button>
+
+                        <!-- Google Forms Modal Launcher Button -->
+                        <button onclick="openGoogleFormsModal()" class="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20 py-3 rounded-xl font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="file-text" class="w-4 h-4 text-gold-light"></i>
+                            Preencher via Google Forms
+                        </button>
+                    </div>
+
+                    <p class="text-[11px] text-center text-light-400 leading-relaxed">
+                        * A reserva de data é confirmada mediante assinatura de contrato. Pagamentos facilitados via PIX ou Cartão.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="sobre" class="py-20 bg-light-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Photographer Photo -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-2xl overflow-hidden border border-light-200 shadow-xl bg-white p-3">
+                        <!-- ========================================================================================= -->
+                        <!-- 👤 FOTO DO PERFIL DO FOTÓGRAFO (SEÇÃO "SOBRE MIM") -->
+                        <!-- Para trocar sua foto de perfil, substitua o link dentro da tag 'src' abaixo por sua imagem -->
+                        <!-- ========================================================================================= -->
+                        <img src="https://scontent-gru1-2.cdninstagram.com/v/t51.82787-19/870226849_18634304647015469_1267069762711108201_n.jpg?_nc_cat=100&ig_cache_key=GKGb3jMtLB8lzTNCAGm6CGg8iZURbmNDAQAB0j-ccb7-5&ccb=7-5&_nc_sid=669407&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy42NzQuQzMifQ%3D%3D&_nc_ohc=Xws0lYXuvUoQ7kNvwHKV3n8&_nc_oc=AdrpZWLTtwNeNTeOg37A-KaJO-_05t9PeSLWBBD6GFN9MlueSxX_eXsInTpMCBEsK0c&_nc_zt=24&_nc_ht=scontent-gru1-2.cdninstagram.com&_nc_gid=cvjJirW6cj12dJ3uOi0anA&_nc_ss=7baaf&oh=00_AQRfDAO51_2iGkVUQst7HF4-Q0VNbbfh5IwjtttZeRd6Rw&oe=6AE9769E" alt="Gustavo Pecorari Fotógrafo" class="w-full h-auto rounded-xl object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-white border border-light-200 p-5 rounded-2xl shadow-lg hidden sm:block">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-xl bg-gold/10 text-gold flex items-center justify-center font-bold text-xl">
+                                GP
+                            </div>
+                            <div>
+                                <p class="font-bold text-charcoal text-sm">Gustavo Pecorari</p>
+                                <p class="text-xs text-charcoal-muted">Fotógrafo & Vídemaker</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Bio -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-xs font-bold text-gold uppercase tracking-widest">Sobre Mim</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-charcoal">Olá, sou o Gustavo Pecorari.</h2>
+                    
+                    <p class="text-charcoal-light text-base leading-relaxed">
+                        Há mais de <strong class="text-charcoal font-semibold">5 anos</strong>, transformo momentos em memórias inesquesiveis. Acredito que a fotografia verdadeira não é apenas sobre poses perfeitas, mas sobre capturar sentimentos autênticos — a gargalhada espontânea, o olhar carinhoso de um casal ou a alegria transbordante de uma comemoração.
+                    </p>
+
+                    <p class="text-charcoal-light text-base leading-relaxed">
+                        Com um histórico de mais de <strong class="text-charcoal font-semibold">100 eventos cobertos</strong> e mais de <strong class="text-charcoal font-semibold">500 registros entregues</strong>, trago tranquilidade, pontualidade e olhar atento para que você aproveite seu momento sem se preocupar com as fotos.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="border-l-2 border-gold pl-4">
+                            <h4 class="font-bold text-charcoal text-base">Atendimento Dedicado</h4>
+                            <p class="text-xs text-charcoal-muted mt-1">Alinhamento prévio dos detalhes para entender exatamente sua necessidade.</p>
+                        </div>
+                        <div class="border-l-2 border-gold pl-4">
+                            <h4 class="font-bold text-charcoal text-base">Entrega Ágil</h4>
+                            <p class="text-xs text-charcoal-muted mt-1">Prazos transparentes entre 15 e 30 dias com galeria protegida online.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="#contato" class="inline-flex items-center gap-2 bg-charcoal hover:bg-black text-white px-6 py-3.5 rounded-xl font-semibold text-sm transition-all shadow-md">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            Falar Diretamente Comigo
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="depoimentos" class="py-20 bg-white border-t border-light-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+                <span class="text-xs font-bold text-gold uppercase tracking-widest">Opinião de Quem Já Fotografou</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-charcoal">Depoimentos dos Clientes</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-light-50 p-8 rounded-2xl border border-light-200 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                        </div>
+                        <p class="text-sm text-charcoal-light italic leading-relaxed">
+                            "Fizemos nosso ensaio de casal com o Gustavo e ficamos impressionados com o profissionalismo! Nos deixou super à vontade e as fotos ficaram incrivelmente poéticas."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-light-200 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold/20 text-gold-dark font-bold flex items-center justify-center text-sm">
+                            MC
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-charcoal">Mariana & Camilo</p>
+                            <p class="text-xs text-charcoal-muted">Ensaio de Casal</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-light-50 p-8 rounded-2xl border border-light-200 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                        </div>
+                        <p class="text-sm text-charcoal-light italic leading-relaxed">
+                            "O Gustavo cobriu a festa de aniversário de 1 ano do meu filho. Não perdeu nenhum momento importante da família e entregou tudo super rápido!"
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-light-200 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold/20 text-gold-dark font-bold flex items-center justify-center text-sm">
+                            RS
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-charcoal">Renata Siqueira</p>
+                            <p class="text-xs text-charcoal-muted">Aniversário Infantil</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-light-50 p-8 rounded-2xl border border-light-200 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-500 gap-1">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                        </div>
+                        <p class="text-sm text-charcoal-light italic leading-relaxed">
+                            "Pontual, atencioso e muito talentoso. Cobriu a comemoração de formatura da nossa turma com extrema perfeição nas luzes e detalhes."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-light-200 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gold/20 text-gold-dark font-bold flex items-center justify-center text-sm">
+                            LA
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-charcoal">Lucas Almeida</p>
+                            <p class="text-xs text-charcoal-muted">Comemoração / Formatura</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contato" class="py-20 bg-light-50 border-t border-light-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- Contact info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold text-gold uppercase tracking-widest">Entre em Contato</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-charcoal">Vamos conversar sobre a sua data?</h2>
+                    <p class="text-charcoal-light text-base leading-relaxed">
+                        Preencha o formulário ou envie uma mensagem direta pelo WhatsApp para checar a disponibilidade da sua data na agenda.
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-light-200 shadow-sm">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-charcoal-muted font-medium">WhatsApp / Telefone</p>
+                                <p class="font-bold text-charcoal text-base">(43) 9 9915-8370</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-light-200 shadow-sm">
+                            <div class="w-11 h-11 rounded-xl bg-gold-soft text-gold-dark flex items-center justify-center font-bold">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-charcoal-muted font-medium">E-mail Profissional</p>
+                                <p class="font-bold text-charcoal text-base">gupecorari@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <!-- Direct Google Forms Box -->
+                        <div class="p-6 rounded-2xl bg-white border-2 border-gold/30 shadow-sm space-y-3">
+                            <div class="flex items-center gap-2 text-gold-dark font-bold text-sm">
+                                <i data-lucide="file-text" class="w-5 h-5"></i>
+                                <span>Prefere usar o Google Forms?</span>
+                            </div>
+                            <p class="text-xs text-charcoal-light leading-relaxed">
+                                Você também pode preencher o formulário detalhado direto na sua conta Google para receber um orçamento formalizado por e-mail.
+                            </p>
+                            <button onclick="openGoogleFormsModal()" class="w-full bg-gold hover:bg-gold-dark text-white py-2.5 rounded-xl font-bold text-xs transition-all shadow-sm flex items-center justify-center gap-2">
+                                Abrir Formulário do Google
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Direct Contact Form -->
+                <div class="lg:col-span-7 bg-white p-8 rounded-2xl border border-light-200 shadow-md">
+                    <h3 class="text-xl font-bold text-charcoal mb-6">Envie uma mensagem</h3>
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-charcoal uppercase mb-1">Seu Nome</label>
+                                <input type="text" id="form-name" required placeholder="Digite seu nome completo" class="w-full px-4 py-3 rounded-xl border border-light-300 focus:outline-none focus:border-gold text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-charcoal uppercase mb-1">Seu WhatsApp</label>
+                                <input type="tel" id="form-phone" required placeholder="(00) 00000-0000" class="w-full px-4 py-3 rounded-xl border border-light-300 focus:outline-none focus:border-gold text-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-charcoal uppercase mb-1">Tipo de Evento</label>
+                                <select id="form-type" class="w-full px-4 py-3 rounded-xl border border-light-300 focus:outline-none focus:border-gold text-sm bg-white">
+                                    <option>Ensaio Casal / Individual</option>
+                                    <option>Aniversário</option>
+                                    <option>Comemorações</option>
+                                    <option>Outro tipo de ensaio</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-charcoal uppercase mb-1">Data Pretendida</label>
+                                <input type="date" id="form-date" class="w-full px-4 py-3 rounded-xl border border-light-300 focus:outline-none focus:border-gold text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-charcoal uppercase mb-1">Mensagem ou Detalhes</label>
+                            <textarea id="form-message" rows="4" placeholder="Conte um pouco sobre o local do evento ou estilo do ensaio desejado..." class="w-full px-4 py-3 rounded-xl border border-light-300 focus:outline-none focus:border-gold text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-charcoal hover:bg-black text-white py-4 rounded-xl font-bold text-sm transition-all shadow-lg flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                            Enviar mensagem via WhatsApp
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-charcoal text-white py-12 border-t border-charcoal-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gold text-white flex items-center justify-center font-bold text-lg">
+                        GP
+                    </div>
+                    <div>
+                        <p class="font-bold text-base">Gustavo Pecorari</p>
+                        <p class="text-xs text-light-400">Foto & Vídeo Profissional</p>
+                    </div>
+                </div>
+
+                <div class="text-xs text-light-400 text-center md:text-right space-y-1">
+                    <p>© <span id="current-year">2026|</span> Gustavo Pecorari. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GOOGLE FORMS EMBEDDED MODAL -->
+    <div id="google-forms-modal" class="fixed inset-0 z-50 bg-black/80 hidden items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="p-4 bg-charcoal text-white flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="file-text" class="w-5 h-5 text-gold"></i>
+                    <h3 class="font-bold text-base">Formulário de Orçamento Google</h3>
+                </div>
+                <button onclick="closeGoogleFormsModal()" class="p-1 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            
+            <div class="flex-1 bg-light-100 overflow-y-auto p-2" id="iframe-container">
+                <iframe id="google-form-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSfD_EXAMPLE/viewform?embedded=true" class="w-full h-[600px] border-0 rounded-xl">Carregando formulário...</iframe>
+            </div>
+
+            <div class="p-4 bg-white border-t border-light-200 flex flex-wrap justify-between items-center gap-3">
+                <span class="text-xs text-charcoal-muted">Integrado com a sua conta Google Forms</span>
+                <div class="flex gap-2">
+                    <a id="direct-google-form-btn" href="#" target="_blank" class="px-4 py-2 rounded-xl bg-light-200 hover:bg-light-300 text-charcoal text-xs font-semibold flex items-center gap-1.5 transition-colors">
+                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        Abrir em Nova Aba
+                    </a>
+                    <button onclick="closeGoogleFormsModal()" class="px-5 py-2 rounded-xl bg-charcoal text-white text-xs font-semibold hover:bg-black transition-colors">
+                        Fechar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // =========================================================================
+        // CONFIGURAÇÕES GERAIS
+        // =========================================================================
+        const WHATSAPP_NUMBER = "5543999158370"; // Substitua pelo seu número real com DDD (ex: 5543999158370)
+        const GOOGLE_FORMS_URL = "https://forms.gle/jhn46fPDUpmmzcCr9"; // Cole aqui o link do seu Google Forms real
+
+        let currentCategory = 'ensaio';
+        const categoryNames = {
+            'ensaio': 'Ensaio Casal / Individual',
+            'aniversario': 'Aniversário',
+            'comemoracoes': 'Comemorações'
+        };
+
+        // Initialize Lucide icons
+        window.onload = function() {
+            lucide.createIcons();
+            setupDates();
+            calculatePrice();
+        };
+
+        // Dynamic 20-Day Validity Date Calculator
+        function setupDates() {
+            const today = new Date();
+            const validUntil = new Date();
+            validUntil.setDate(today.getDate() + 20);
+
+            const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+            const formattedDate = validUntil.toLocaleDateString('pt-BR', options);
+            
+            const dateDisplay = document.getElementById('promo-date-display');
+            if (dateDisplay) {
+                dateDisplay.innerText = formattedDate;
+            }
+
+            const yearDisplay = document.getElementById('current-year');
+            if (yearDisplay) {
+                yearDisplay.innerText = today.getFullYear();
+            }
+        }
+
+        // Category Switcher Function for Pricing Calculator
+        function selectCategory(cat) {
+            currentCategory = cat;
+
+            // Reset buttons styling
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('border-gold', 'bg-gold-soft/50', 'shadow-sm');
+                btn.classList.add('border-light-200', 'bg-white');
+            });
+
+            const activeBtn = document.getElementById(`btn-cat-${cat}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('border-light-200', 'bg-white');
+                activeBtn.classList.add('border-gold', 'bg-gold-soft/50', 'shadow-sm');
+            }
+
+            // Toggle active option group
+            document.querySelectorAll('.option-group').forEach(group => group.classList.add('hidden'));
+            const activeGroup = document.getElementById(`options-${cat}`);
+            if (activeGroup) {
+                activeGroup.classList.remove('hidden');
+            }
+
+            // Update category badge
+            document.getElementById('category-badge').innerText = `Categoria: ${categoryNames[cat]}`;
+
+            // Recalculate price
+            calculatePrice();
+        }
+
+        // Price Calculator Function
+        function calculatePrice() {
+            const selectedRadio = document.querySelector(`input[name="hours_${currentCategory}"]:checked`);
+            if (!selectedRadio) return;
+
+            const price = parseInt(selectedRadio.value);
+            const hoursText = selectedRadio.getAttribute('data-hours');
+            const categoryTitle = categoryNames[currentCategory];
+
+            // Format price as BRL
+            const formattedPrice = price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+            // Update Summary Card
+            document.getElementById('summary-category-title').innerText = categoryTitle;
+            document.getElementById('summary-hours-text').innerText = hoursText;
+            document.getElementById('summary-price-display').innerText = formattedPrice;
+            document.getElementById('total-price').innerText = formattedPrice;
+        }
+
+        // WhatsApp Direct Link Generator from Calculator
+        function sendToWhatsApp() {
+            const selectedRadio = document.querySelector(`input[name="hours_${currentCategory}"]:checked`);
+            const price = parseInt(selectedRadio.value).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            const hoursText = selectedRadio.getAttribute('data-hours');
+            const categoryTitle = categoryNames[currentCategory];
+
+            const message = `Olá Gustavo Pecorari! Fiz uma simulação no seu site:\n\n` +
+                            `📸 *Categoria:* ${categoryTitle}\n` +
+                            `⏱️ *Duração:* ${hoursText}\n` +
+                            `💰 *Investimento Estimado:* ${price}\n` +
+                            `📅 *Prazo de Entrega:* 15 a 30 dias\n\n` +
+                            `Gostaria de verificar a disponibilidade da sua agenda!`;
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
+        }
+
+        // Direct Contact Form Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const type = document.getElementById('form-type').value;
+            const date = document.getElementById('form-date').value;
+            const messageText = document.getElementById('form-message').value;
+
+            const message = `Olá Gustavo! Mensagem enviada pelo site:\n\n` +
+                            `👤 *Nome:* ${name}\n` +
+                            `📱 *WhatsApp:* ${phone}\n` +
+                            `📸 *Tipo de Evento:* ${type}\n` +
+                            `📅 *Data Pretendida:* ${date || 'A definir'}\n` +
+                            `📝 *Mensagem:* ${messageText || 'Sem observações adicionais.'}`;
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
+        }
+
+        // Google Forms Modal Management
+        function openGoogleFormsModal() {
+            const modal = document.getElementById('google-forms-modal');
+            const iframe = document.getElementById('google-form-iframe');
+            const directBtn = document.getElementById('direct-google-form-btn');
+
+            iframe.src = GOOGLE_FORMS_URL;
+            directBtn.href = GOOGLE_FORMS_URL;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeGoogleFormsModal() {
+            const modal = document.getElementById('google-forms-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Gallery Filter System
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active', 'bg-charcoal', 'text-white');
+                    btn.classList.add('bg-white', 'text-charcoal-light', 'border-light-200');
+                });
+
+                button.classList.add('active', 'bg-charcoal', 'text-white');
+                button.classList.remove('bg-white', 'text-charcoal-light');
+
+                const filter = button.getAttribute('data-filter');
+                document.querySelectorAll('.gallery-item').forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Gallery Lightbox System
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxCategory = document.getElementById('lightbox-category');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const src = item.getAttribute('data-src');
+                const title = item.getAttribute('data-title');
+                const category = item.getAttribute('data-category');
+
+                lightboxImg.src = src;
+                lightboxTitle.innerText = title;
+                lightboxCategory.innerText = category;
+
+                lightbox.classList.remove('hidden');
+                lightbox.classList.add('flex');
+            });
+        });
+
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
